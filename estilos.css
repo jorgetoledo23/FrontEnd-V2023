@@ -1,0 +1,27 @@
+.parrafo1{
+    color: red; 
+    background-color: black; 
+    font-size: 18px; 
+    padding: 10px; 
+    margin: 20px;
+}
+.parrafo2{
+    color: blue; 
+    background-color: yellow; 
+    font-size: 15px; 
+    font-family: 'Courier New', Courier, monospace; 
+    padding: 10px; margin: 20px;
+}
+
+body{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    text-align: center;
+    width: 50%;
+
+}
+

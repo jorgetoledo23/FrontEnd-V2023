@@ -1,0 +1,85 @@
+[
+    {
+        "ProductId" : "1",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "2",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "3",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "4",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "5",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "6",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "7",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "8",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "9",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    },
+    {
+        "ProductId" : "10",
+        "Descripcion" : "Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport",
+        "Precio" : "99999",
+        "Stock" : 20,
+        "UrlImagen" : "https://flowbite.com/docs/images/products/apple-watch.png",
+        "Valoracion" : 4.5
+    }
+]
+
+   
+

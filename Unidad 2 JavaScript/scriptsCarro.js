@@ -1,6 +1,8 @@
+import data from './data.json' assert { type: 'json'}
+
 const root = document.getElementById("root")
 
-
+console.log(data)
 
 
 const Productos = [
@@ -103,7 +105,7 @@ const Productos = [
 
 const cargarProductos = () => {
 
-    Productos.forEach( x => {
+    data.forEach( x => {
         
         const card = document.createElement("div")
         const img = document.createElement("img")

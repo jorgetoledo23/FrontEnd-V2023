@@ -1,0 +1,30 @@
+#carro{
+    width: 90%;
+    height: 0vh;
+    background-color: aquamarine;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    transition: 1.5s;
+
+
+}
+
+#productContainer{
+    display: none;
+}
+
+.btnBorrar{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 30px;
+    margin: auto;
+
+}

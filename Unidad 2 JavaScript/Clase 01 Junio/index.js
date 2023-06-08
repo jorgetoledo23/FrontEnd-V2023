@@ -44,63 +44,88 @@ Productos.forEach(P =>{
     const img = document.createElement('img')
     img.src = P.UrlImagen
     img.classList.add('d-block','mx-auto','img-fluid', 'm-2')
-    img.style.width = "200px"
-    img.style.height = "200px"
+    img.style.width = "150px"
+    img.style.height = "150px"
     img.style.maxHeight = "200px"
 
-    const precio = document.createElement('p')
+    const precio = document.createElement('span')
     precio.innerHTML = '<strong>'+ CLFormat.format(P.Precio)+'</strong>'
+
+    const textoPrecio = document.createElement('p')
+    textoPrecio.innerText = 'Valor: '
+    textoPrecio.style.fontSize = '14px'
+    textoPrecio.appendChild(precio)
+
+    
 
     const btnAdd = document.createElement('a')
     btnAdd.classList.add('btn', 'btn-outline-primary', 'col-4', 'mx-auto')
-    btnAdd.innerHTML = "<i class='fa-solid fa-cart-plus me-2'></i>"
+    btnAdd.innerHTML = "<i class='fa-solid fa-cart-plus mx-2'></i>"
+    
     
     btnAdd.addEventListener('click', ()=>{
         
-        const divCarro = document.createElement('div')
-        divCarro.classList.add('card', 'fs-5', 'p-3', 'm-3', 'text-center')
-        
-        const descCarro = document.createElement('p')
-        descCarro.classList.add('card-title')
-        descCarro.innerText = P.Descripcion
-        descCarro.style.minHeight = "60px"
+        const exists = document.getElementById(P.Codigo) // null - HTMLElement
+        if(exists == null){
+            //Producto NO existe en el Carro-por lo tanto debe agregarse
+            const divCarro = document.createElement('div')
+            divCarro.classList.add('card', 'p-2', 'm-2', 'text-center')
+            
+            const descCarro = document.createElement('p')
+            descCarro.classList.add('card-title')
+            descCarro.innerText = P.Descripcion
+    
+            const imgCarro = document.createElement('img')
+            imgCarro.src = P.UrlImagen
+            imgCarro.classList.add('d-block','mx-auto')
+            imgCarro.style.width = "100px"
+            imgCarro.style.height = "100px"
+            imgCarro.style.maxHeight = "100px"
+    
+            const precioCarro = document.createElement('span')
+            precioCarro.innerHTML = '<strong>'+ CLFormat.format(P.Precio) +'</strong>'
+    
+            const textoPrecioCarro = document.createElement('p')
+            textoPrecioCarro.innerText = 'Valor Unitario: '
+            textoPrecioCarro.style.fontSize = '14px'
+            textoPrecioCarro.appendChild(precioCarro)
+    
+            const textoCantidad = document.createElement('p')
+            textoCantidad.innerText = 'Cantidad: '
+            textoCantidad.style.fontSize = '14px'
 
-        const imgCarro = document.createElement('img')
-        imgCarro.src = P.UrlImagen
-        imgCarro.classList.add('d-block','mx-auto','img-fluid')
-        imgCarro.style.width = "100px"
-        imgCarro.style.height = "100px"
-        imgCarro.style.maxHeight = "100px"
+            const cantidad = document.createElement('span')
+            cantidad.id = P.Codigo
+            cantidad.innerText = 1
 
-        const precioCarro = document.createElement('p')
-        precioCarro.innerHTML = '<strong>'+ P.Precio+'</strong>'
+            textoCantidad.appendChild(cantidad)
+    
+            const btnBorrar = document.createElement('a')
+            btnBorrar.classList.add('btn', 'btnBorrar', 'm-2')
+            btnBorrar.innerHTML = "<i class='fa-solid fa-trash'></i>"
+            btnBorrar.addEventListener('click', ()=>{
+                productContainer.removeChild(divCarro)
+            })
+    
+    
+            divCarro.appendChild(imgCarro)
+            divCarro.appendChild(descCarro)
+            divCarro.appendChild(textoPrecioCarro)
+            divCarro.appendChild(textoCantidad)
+            divCarro.appendChild(btnBorrar)  
+            productContainer.appendChild(divCarro)
+        }else{
+            exists.innerText = parseInt(exists.innerText) + 1
+        }
 
-        const cantidad = document.createElement('p')
-        cantidad.id = P.Codigo
-        cantidad.innerText = 1
 
-        const btnBorrar = document.createElement('a')
-        btnBorrar.classList.add('btn', 'btnBorrar', 'm-2')
-        btnBorrar.innerHTML = "<i class='fa-solid fa-trash'></i>"
-        btnBorrar.addEventListener('click', ()=>{
-            productContainer.removeChild(divCarro)
-        })
-
-
-        divCarro.appendChild(imgCarro)
-        divCarro.appendChild(descCarro)
-        divCarro.appendChild(precioCarro)
-        divCarro.appendChild(cantidad)
-        divCarro.appendChild(btnBorrar)
-
-        
-        productContainer.appendChild(divCarro)
+       
     })
 
 
     div.appendChild(desc)
     div.appendChild(img)
-    div.appendChild(precio)
+    div.appendChild(textoPrecio)
     div.appendChild(btnAdd)
 
     divRoot.appendChild(div)
@@ -110,12 +135,6 @@ Productos.forEach(P =>{
 const btnOpenCart = document.getElementById("btnOpenCart")
 const divCarro = document.getElementById('carro')
 btnOpenCart.addEventListener('click', ()=>{
-    // if(divCarro.style.height == "80vh"){
-    //     divCarro.style.height = "0vh"
-    //     alert(2)
-    // }else{
-    //     divCarro.style.height = "80vh"
-    // }
     divCarro.style.height == "80vh" ? divCarro.style.height = "0vh" : divCarro.style.height = "80vh"
 })
 

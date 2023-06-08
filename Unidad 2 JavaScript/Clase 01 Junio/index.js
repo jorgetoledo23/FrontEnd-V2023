@@ -4,9 +4,10 @@ const CLFormat = new Intl.NumberFormat('es-CL',
     currency : 'CLP'
 })
 
+let TOTAL = 0
+const spanTotal = document.getElementById('total')
 
-const numeros = [1,2,3,4,5,6]
-
+const CARRO = []
 
 const Productos = [{
     "Codigo" : "1",
@@ -64,10 +65,16 @@ Productos.forEach(P =>{
     
     
     btnAdd.addEventListener('click', ()=>{
+
+        TOTAL = TOTAL + P.Precio
+        spanTotal.innerText = CLFormat.format(TOTAL)
         
         const exists = document.getElementById(P.Codigo) // null - HTMLElement
         if(exists == null){
             //Producto NO existe en el Carro-por lo tanto debe agregarse
+
+            CARRO.push(P)
+            console.log(CARRO)
             const divCarro = document.createElement('div')
             divCarro.classList.add('card', 'p-2', 'm-2', 'text-center')
             
@@ -104,6 +111,9 @@ Productos.forEach(P =>{
             btnBorrar.classList.add('btn', 'btnBorrar', 'm-2')
             btnBorrar.innerHTML = "<i class='fa-solid fa-trash'></i>"
             btnBorrar.addEventListener('click', ()=>{
+                TOTAL = TOTAL - (parseInt(cantidad.innerText) * P.Precio)
+                spanTotal.innerText = CLFormat.format(TOTAL)
+               
                 productContainer.removeChild(divCarro)
             })
     

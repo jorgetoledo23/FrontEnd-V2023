@@ -4,10 +4,10 @@ const spanCount = document.getElementById('count')
 let count = 0
 
 btnAgregar.addEventListener('click', () =>{
-    count ++
-    spanCount.innerText = count
-    const titulo = document.getElementById('tituloCancion').value
-    const artista = document.getElementById('artistaCancion').value
+    
+    count ++; spanCount.innerText = count;
+    const titulo = document.getElementById('tituloCancion').value;
+    const artista = document.getElementById('artistaCancion').value;
     const album = document.getElementById('albumCancion').value
     const duracion = document.getElementById('duracionCancion').value
     let fecha = new Date().toLocaleDateString()
@@ -45,6 +45,7 @@ btnAgregar.addEventListener('click', () =>{
         count--
         spanCount.innerText = count
         rootTable.removeChild(tr)
+        actualizarCorrelativos()
     })
     tdBtn.appendChild(btnEliminar)
 
@@ -59,3 +60,18 @@ btnAgregar.addEventListener('click', () =>{
 
     
 })
+
+
+function actualizarCorrelativos() {
+
+    const allRows = Array.from(rootTable.getElementsByTagName('tr'))
+    console.log(allRows)
+    i = 1
+    allRows.forEach(tr => {
+        tr.childNodes[0].innerText = i
+        i++
+    })
+
+
+
+}
